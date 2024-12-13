@@ -1,0 +1,25 @@
+﻿@model proyectofinal1_.Models.Usuario
+    <h2>Iniciar Sesión</h2>
+
+    @using (Html.BeginForm("Login", "Usuarios", FormMethod.Post))
+    {
+        @Html.ValidationSummary(true, "Por favor corrija los errores a continuación:")
+
+        <div>
+            <label for="NombreUsuario">Nombre de Usuario:</label>
+            @Html.TextBoxFor(m => m.NombreUsuario, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.NombreUsuario)
+        </div>
+
+        <div>
+            <label for="ContraseñaHash">Contraseña:</label>
+            @Html.PasswordFor(m => m.ContraseñaHash, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.ContraseñaHash)
+        </div>
+
+        <div>
+            <button type="submit">Iniciar Sesión</button>
+        </div>
+    }
+
+
